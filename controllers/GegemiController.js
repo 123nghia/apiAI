@@ -5,6 +5,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 module.exports = {
     AnalysisAI: async (req, res) => {
         try {
+            console.log("3");
             const { question } = req.body;
             if(question == null || question.length < 1)
             {
@@ -16,9 +17,12 @@ module.exports = {
             resultText = resultText.replace('```',''); 
             resultText = resultText.replace('```',''); 
 
+            console.log(result);
+
             res.send(200,resultText);
         } catch (err) {
             
+            console.log(err);
         }
     }
 }
