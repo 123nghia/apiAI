@@ -1,11 +1,11 @@
 const Response = require('../helpers/Response');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const genAI = new GoogleGenerativeAI("AIzaSyD1ZvzaErC5lqyxi8p51oHch3WDIb7NBno");
+const genAI = new GoogleGenerativeAI("AIzaSyD9kU1C9oB3ffBqzKe_uL9g2hdXGTQV5C4");
 const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 module.exports = {
     AnalysisAI: async (req, res) => {
         try {
-            console.log("3");
+         
             const { question } = req.body;
             if(question == null || question.length < 1)
             {
